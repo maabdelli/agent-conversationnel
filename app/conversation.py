@@ -12,7 +12,7 @@ def create_conversation(persist_directory) -> ConversationalRetrievalChain:
     
 
     embeddings = OpenAIEmbeddings(
-        openai_api_key='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'
+        openai_api_key='s'
     )
 
     db = lancedb.connect(persist_directory)
@@ -30,7 +30,7 @@ def create_conversation(persist_directory) -> ConversationalRetrievalChain:
     )
 
     qa = ConversationalRetrievalChain.from_llm(
-        llm=ChatOpenAI(openai_api_key='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'),
+        llm=ChatOpenAI(openai_api_key='sk-'),
         chain_type='stuff',
         retriever=vectorstore.as_retriever(),
         memory=memory,
